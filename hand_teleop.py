@@ -117,13 +117,13 @@ arm.set_fense_mode(True)
 # Conservative acceleration limits for teleoperation
 arm.set_tcp_maxacc(5000)            # mm/s^2
 arm.set_joint_maxacc(10)            # rad/s^2
-arm.set_reduced_max_tcp_speed(200)  # mm/s
+arm.set_reduced_max_tcp_speed(600)  # 200mm/s
 arm.set_reduced_max_joint_speed(60) # deg/s
 arm.set_reduced_mode(True)
 
 print('XArm initialized with safety limits')
 
-landmark_filter = filtering.LowPassFilter(alpha=0.1)
+landmark_filter = filtering.LowPassFilter(alpha=0.2)
 recording = False
 video_writer = None
 
